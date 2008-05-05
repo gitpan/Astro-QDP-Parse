@@ -1,0 +1,17 @@
+Revision history for Astro::QDP::Parse
+
+0.11
+       Ensure that tests work if PDL is not available
+
+0.1
+       Major rewrite, API breakage, rename to Astro::QDP::Parse
+
+0.04  
+       Various bugfixes
+
+0.02  
+       Added TERR test
+
+0.01  
+       Initial release.
+
