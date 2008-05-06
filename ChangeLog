@@ -1,4 +1,25 @@
-2008-05-06 08:06 -0400  djerius  <djerius@cfa.harvard.edu>  (67cb88c074ae [tip])
+2008-05-06 15:04 -0400  djerius  <djerius@cfa.harvard.edu>  (2f1822e5da7e [tip])
+
+	* lib/Astro/QDP/Parse.pm, t/parse_qdpfile.t:
+	assymmetric errors are now ehi & elo as the names emin & emax may be
+	confused with bounds rather than errors
+
+2008-05-06 13:57 -0400  djerius  <djerius@cfa.harvard.edu>  (a32d2df34cea)
+
+	* .hgtags:
+	Added tag 0.12 for changeset 23d3159b86cb
+
+2008-05-06 13:56 -0400  djerius  <djerius@cfa.harvard.edu>  (9d2ae89f0629)
+
+	* lib/Astro/QDP/Parse.pm:
+	CPAN RT address in docs used the old module name
+
+2008-05-06 08:09 -0400  djerius  <djerius@cfa.harvard.edu>  (23d3159b86cb [0.12])
+
+	* ChangeLog, Changes, lib/Astro/QDP/Parse.pm:
+	updated version and logs for release
+
+2008-05-06 08:06 -0400  djerius  <djerius@cfa.harvard.edu>  (67cb88c074ae)
 
 	* MANIFEST.SKIP:
 	MANIFEST.SKIP excluded Module::Install directories, causing a broken

@@ -27,7 +27,7 @@ use 5.008;
 
 use Carp;
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 use Text::Abbrev;
 
@@ -192,8 +192,8 @@ sub _parse_qdp_hdr
       }
       elsif ( $vec->{errtype} == 2 )
       {
-          $vec->{emin} = [];
-          $vec->{emax} = [];
+          $vec->{elo} = [];
+          $vec->{ehi} = [];
       }
   }
 
@@ -245,7 +245,7 @@ sub _parse_qdp_datagroup
   # to speed up processing of data
   my @drefs = map {   $_->{errtype} == 0 ? ( $_->{data} )
                     : $_->{errtype} == 1 ? ( $_->{data}, $_->{err} )
-                    :                      ( $_->{data}, $_->{emin}, $_->{emax} ) 
+                    :                      ( $_->{data}, $_->{elo}, $_->{ehi} ) 
                 }
                @$vecs;
 
@@ -257,13 +257,13 @@ sub _parse_qdp_datagroup
       {
           $vec->{$_} = pdl( $vec->{$_} ) 
             foreach grep { exists $vec->{$_} }
-                           qw ( data err emin emax );
+                           qw ( data err elo ehi );
       }
   }
 
   if ( $opt->{normalize} )
   {
-      $_->{emin} = $_->{emax} = delete $_->{err}
+      $_->{elo} = $_->{ehi} = delete $_->{err}
         foreach grep { exists $_->{err} } @$vecs;
   }
 
@@ -469,15 +469,15 @@ A array (or piddle, if the C<as_pdl> option was specified) containing the data.
 
 A array (or piddle, if the C<as_pdl> option was specified) containing
 the symmetric error, if available.  If the C<normalize> option was
-specified, then the symmetric error is made available via the C<emin> and
-C<emax> elements and this element is not present.
+specified, then the symmetric error is made available via the C<elo> and
+C<ehi> elements and this element is not present.
 
-=item C<emin>
+=item C<elo>
 
 A array (or piddle, if the C<as_pdl> option was specified) containing
 the lower assymmetric error, if available.
 
-=item C<emax>
+=item C<ehi>
 
 A array (or piddle, if the C<as_pdl> option was specified) containing
 the upper assymmetric error, if available.
@@ -588,8 +588,8 @@ None reported.
 No bugs have been reported.
 
 Please report any bugs or feature requests to
-C<bug-astro-headas-qdp-parse@rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Astro-HEADAS-QDP-Parse>.
+C<bug-astro-qdp-parse@rt.cpan.org>, or through the web interface at
+L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Astro-QDP-Parse>.
 
 =head1 SEE ALSO
 
@@ -597,7 +597,7 @@ The B<QDP> web page at L<http://wwwastro.msfc.nasa.gov/qdp/>.
 
 =head1 VERSION
 
-Version 0.12
+Version 0.13
 
 =head1 LICENSE AND COPYRIGHT
 
@@ -618,7 +618,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 =head1 AUTHOR
 
-Terry Gaetz  E<lt>tgaetz@cfa.harvard.eduE<gt>
+Terry Gaetz  E<lt>tgaetz@cpan.orgE<gt>
 
 Diab Jerius  E<lt>djerius@cpan.orgE<gt>
 

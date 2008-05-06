@@ -1,20 +1,21 @@
----
-abstract: 'extract Data from a B<QDP> input file'
-author: 'The Smithsonian Astrophysical Observatory'
-build_requires:
+--- 
+abstract: extract Data from a B<QDP> input file
+author: 
+  - The Smithsonian Astrophysical Observatory
+build_requires: 
   Test::More: 0
 distribution_type: module
-generated_by: 'Module::Install version 0.67'
+generated_by: Module::Install version 0.68
 license: gpl3
-meta-spec:
+meta-spec: 
   url: http://module-build.sourceforge.net/META-spec-v1.3.html
   version: 1.3
 name: Astro-QDP-Parse
-no_index:
-  directory:
+no_index: 
+  directory: 
     - inc
     - t
-requires:
+requires: 
   Clone: 0
   IO::File: 0
   List::MoreUtils: 0
@@ -23,4 +24,4 @@ requires:
   Regexp::Common: 0
   Text::Abbrev: 0
   perl: 5.8.0
-version: 0.1
+version: 0.13

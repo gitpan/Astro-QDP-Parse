@@ -1,5 +1,9 @@
 Revision history for Astro::QDP::Parse
 
+0.13
+	* small doc fixes
+	* asymmetric errors are now named ehi & elo rather than emin & emax
+
 0.12
 	* Distribution file lacked the Module::Install modules
 	* fix runtime as_pdl consistency check
