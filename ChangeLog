@@ -1,4 +1,25 @@
-2008-05-05 16:18 -0400  djerius  <djerius@cfa.harvard.edu>  (7d63ab32d792 [tip])
+2008-05-06 08:06 -0400  djerius  <djerius@cfa.harvard.edu>  (67cb88c074ae [tip])
+
+	* MANIFEST.SKIP:
+	MANIFEST.SKIP excluded Module::Install directories, causing a broken
+	distribution file
+
+2008-05-05 16:32 -0400  djerius  <djerius@cfa.harvard.edu>  (9dbe55299656)
+
+	* lib/Astro/QDP/Parse.pm:
+	typo caused runtime as_pdl consistency check to fail
+
+2008-05-05 16:19 -0400  djerius  <djerius@cfa.harvard.edu>  (655c92641b0e)
+
+	* .hgtags:
+	Added tag 0.11 for changeset 9d68b348f91f
+
+2008-05-05 16:19 -0400  djerius  <djerius@cfa.harvard.edu>  (9d68b348f91f [0.11])
+
+	* ChangeLog, Changes, lib/Astro/QDP/Parse.pm:
+	update for release
+
+2008-05-05 16:18 -0400  djerius  <djerius@cfa.harvard.edu>  (7d63ab32d792)
 
 	* t/parse_qdpfile.t:
 	ensure that test works if PDL is not available

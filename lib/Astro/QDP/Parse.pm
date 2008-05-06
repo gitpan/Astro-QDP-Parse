@@ -27,7 +27,7 @@ use 5.008;
 
 use Carp;
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use Text::Abbrev;
 
@@ -80,7 +80,7 @@ sub parse_qdpfile
                            );
 
     croak( "piddle output requested, but PDL is not available\n" )
-      if $opt{as_pdls} && ! $have_PDL;
+      if $opt{as_pdl} && ! $have_PDL;
 
     my $lines = read_qdpfile( $file );
 
@@ -597,7 +597,7 @@ The B<QDP> web page at L<http://wwwastro.msfc.nasa.gov/qdp/>.
 
 =head1 VERSION
 
-Version 0.11
+Version 0.12
 
 =head1 LICENSE AND COPYRIGHT
 
